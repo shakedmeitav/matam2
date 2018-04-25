@@ -1,0 +1,131 @@
+if [ ! -f rawFileFilter ] || [ ! -f count ] || [ ! -f seperateSeq ]; then
+    echo "rawFileFilter, count, and seperateSeq scripts MUST be in the folder"
+    echo "Please create them and run tests again"
+    exit
+fi
+
+touch errors
+ORIG_LS=$(ls)
+
+echo -e "\nRunning rawFileFilter tests\n"
+
+
+bash ./rawFileFilter input/test1.in 1 test1.out 2>errors
+TEST_LS=$(ls)
+if [ "$ORIG_LS" != "$TEST_LS" ] || [ -s errors ]; then
+    echo "Test 1 failed"
+else
+    echo "Test 1 passed"
+fi
+
+bash ./rawFileFilter input/test2.in 0 test2.out 2>errors
+TEST_LS=$(ls)
+if [ "$ORIG_LS" != "$TEST_LS" ] || [ -s errors ]; then
+    echo "Test 2 failed"
+else
+    echo "Test 2 passed"
+fi
+
+bash ./rawFileFilter input/test3.in -6 test3.out 2>errors
+TEST_LS=$(ls)
+if [ "$ORIG_LS" != "$TEST_LS" ] || [ -s errors ]; then
+    echo "Test 3 failed"
+else
+    echo "Test 3 passed"
+fi
+
+bash ./rawFileFilter input/test4.in 50 test4.out 2>errors
+TEST_LS=$(ls)
+if [ "$ORIG_LS" != "$TEST_LS" ] || [ -s errors ]; then
+    echo "Test 4 failed"
+else
+    echo "Test 4 passed"
+fi
+
+
+bash ./rawFileFilter input/test5.in 7 test5.out 2>errors
+if [ ! -d 7 ]; then
+    echo "Test 5 failed"
+else
+    DIFF=$(diff 7/test5.out output/test5.valid)
+    if [ "$DIFF" != "" ] || [ -s errors ]; then
+        echo "Test 5 failed"
+    else
+        echo "Test 5 passed"
+    fi
+fi
+
+
+bash ./rawFileFilter input/test6.in 5 test6.out 2>errors
+if [ ! -d 5 ]; then
+    echo "Test 6 failed"
+else
+    DIFF=$(diff 5/test6.out output/test6.valid)
+    if [ "$DIFF" != "" ] || [ -s errors ]; then
+        echo "Test 6 failed"
+    else
+        echo "Test 6 passed"
+    fi
+fi
+
+
+echo -e "\nRunning count tests\n"
+
+bash ./count input/test7 > test7.out 2>errors
+if [ -s test7.out ] || [ -s errors ]; then
+    echo "Test 7 failed"
+else
+    echo "Test 7 passed"
+fi
+
+bash ./count input/test8 > test8.out 2>errors
+DIFF=$(diff test8.out output/test8.valid)
+if [ "$DIFF" != "" ] || [ -s errors ]; then
+    echo "Test 8 failed"
+else
+    echo "Test 8 passed"
+fi
+
+bash ./count input/test9 > test9.out 2>errors
+DIFF=$(diff test9.out output/test9.valid)
+if [ "$DIFF" != "" ] || [ -s errors ]; then
+    echo "Test 9 failed"
+else
+    echo "Test 9 passed"
+fi
+
+
+echo -e "\nRunning seperateSeq tests\n"
+
+bash ./seperateSeq input/test10/test10.in > test10.out 2>errors
+if [ -s test10.out ] || [ -s errors ]; then
+    echo "Test 10 failed"
+else
+    echo "Test 10 passed"
+fi
+
+bash ./seperateSeq input/test11.in > test11.out 2>errors
+DIFF=$(diff test11.out output/test11.valid)
+if [ "$DIFF" != "" ] || [ -s errors ]; then
+    echo "Test 11 failed"
+else
+    echo "Test 11 passed"
+fi
+
+bash ./seperateSeq input/test12.in > test12.out 2>errors
+DIFF=$(diff test12.out output/test12.valid)
+if [ "$DIFF" != "" ] || [ -s errors ]; then
+    echo "Test 12 failed"
+else
+    echo "Test 12 passed"
+fi
+
+bash ./seperateSeq input/"test 13 file.in" > test13.out 2>errors
+DIFF=$(diff test13.out output/test13.valid)
+if [ "$DIFF" != "" ] || [ -s errors ]; then
+    echo "Test 13 failed"
+else
+    echo "Test 13 passed"
+fi
+
+echo -e "\n"

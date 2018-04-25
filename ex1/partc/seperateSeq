@@ -1,0 +1,13 @@
+#!/bin/bash 
+if [[ ! -f "$1" ]]; then
+	exit
+fi
+while read line; do
+	for (( i=0; i<${#line}; i++ )); do
+		if [[ "${line:$i:1}" == "T" ]]; then
+			let i++
+			echo $line | cut -c1-$i
+			let i--
+		fi
+	done
+done < "$1"

@@ -1,0 +1,14 @@
+#!/bin/bash 
+infile_param=$1
+num_param=$2
+outfile_param=$3
+if (( $num_param > 49 || $num_param < 1 )); then
+	exit
+fi
+if [[ ! -f $infile_param ]]; then
+	exit
+fi
+if [[ ! -d $num_param ]]; then
+	mkdir $num_param
+fi
+sed -n '2~4p' $infile_param | sed 's/[^ACTG]//g' | cut -c1-$num_param > $num_param/$outfile_param

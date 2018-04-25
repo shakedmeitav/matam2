@@ -1,0 +1,40 @@
+# Test 1 - rawFileFilter with a nonexistent input file
+bash ./rawFileFilter input/test1.in 1 test1.out
+
+# Test 2 - rawFileFilter with 0 num
+bash ./rawFileFilter input/test2.in 0 test2.out
+
+# Test 3 - rawFileFilter with negative num
+bash ./rawFileFilter input/test3.in -6 test3.out
+
+# Test 4 - rawFileFilter with 50 num
+bash ./rawFileFilter input/test4.in 50 test4.out
+
+# Test 5 - MTM website - first rawFileFilter test
+bash ./rawFileFilter input/test5.in 7 test5.out
+
+# Test 6 - MTM website - second rawFileFilter test
+bash ./rawFileFilter input/test6.in 5 test6.out
+
+# Test 7 - count with nonexistent input folder
+bash ./count input/test7 > test7.out
+
+# Test 8 - MTM website - second count test
+bash ./count input/test8 > test8.out
+
+# Test 9 - MTM website - first count test
+bash ./count input/test9 > test9.out
+
+### Yes, I know the order in tests 8 and 9 is flipped, because of reasons
+
+# Test 10 - seperateSeq with nonexistent input file
+bash ./seperateSeq input/test10/test10.in > test10.out
+
+# Test 11 - MTM website - first seperateSeq test
+bash ./seperateSeq input/test11/test11.in > test11.out
+
+# Test 12 - MTM website - second seperateSeq test
+bash ./seperateSeq input/test12/test12.in > test12.out
+
+# Test 13 - seperateSeq with fileName with spaces
+bash ./seperateSeq input/"test 13 file.in" > test13.out

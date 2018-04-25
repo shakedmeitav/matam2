@@ -1,0 +1,6 @@
+./rawFileFilter file1.fastq 7 file1 #compare with 7_example/file1_example
+./rawFileFilter file2.fastq 5 file2 #compare with 5_example/file2_example
+./count 5_example #compare with count_example_1
+./count 7_example #compare with count_example_2
+./seperateSeq 7_example/file1_example  #compare with seperateSeq_example_1
+./seperateSeq 5_example/file2_example  #compare with seperateSeq_example_2

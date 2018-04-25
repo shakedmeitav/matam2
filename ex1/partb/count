@@ -1,0 +1,7 @@
+#!/bin/bash
+num_file=$1
+if [[ ! -d $num_file ]]; then
+exit
+fi
+cd $num_file
+cat *|sort -r|uniq -c|sort -rns|sed 's/^[[:space:]]*//g'|sed 's/ /\t/'

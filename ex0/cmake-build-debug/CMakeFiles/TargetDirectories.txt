@@ -1,0 +1,3 @@
+C:/private/Shaked/Technion/shaked_technion/spring 2017-2018/matam/ex0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/private/Shaked/Technion/shaked_technion/spring 2017-2018/matam/ex0/cmake-build-debug/CMakeFiles/ex0.dir
+C:/private/Shaked/Technion/shaked_technion/spring 2017-2018/matam/ex0/cmake-build-debug/CMakeFiles/rebuild_cache.dir

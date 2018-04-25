@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/private/Shaked/Technion/shaked_technion/spring 2017-2018/matam/ex0/main.c
+stdio.h
+-
+math.h
+-
+string.h
+-
+

@@ -1,0 +1,8 @@
+Instructions for running the tests:
+
+1. Unzip tests into a folder
+2. Copy entire tests folder to CSL2 server
+3. Copy your 3 scripts into the tests folder (rawFileFilter, count, seperateSeq)
+   All 3 scripts must be in the folder for the tests to run
+4. Run "bash run_tests"
+5. If any of them failed, check tests.txt for an explanation of what the test does

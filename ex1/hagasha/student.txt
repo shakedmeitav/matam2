@@ -1,0 +1,11 @@
+-----------------------------------------------
+First name : shaked	
+Last name : meitav
+ID : 312589641
+Email : shakedmeitav@campus.technion.ac.il
+-----------------------------------------------
+First name : rotem	
+Last name : friedman	
+ID : 312360217
+Email : rotem.fri@campus.technion.ac.il
+-----------------------------------------------
