@@ -7,7 +7,7 @@ int main() {
     int size_of_input;
     int input;
     double result;                                          //log base 2 of the input will save in 'result'
-    int total_exponent_sum=5;
+    int total_exponent_sum=6666666;
     int i;                                                 //used for the "for" loop
     char str_result[4000]="\0";
     char str_temp[200]="\0";
